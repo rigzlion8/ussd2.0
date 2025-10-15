@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import connectDB from '../../../../lib/mongodb';
-import User from '../../../../models/User';
-import Subscription from '../../../../models/Subscription';
-import Message from '../../../../models/Message';
-import { validateWebhookSignature, config, sendSMS } from '../../../../lib/africastalking';
+import connectDB from '@lib/mongodb.js';
+import User from '@models/User.js';
+import Subscription from '@models/Subscription.js';
+import Message from '@models/Message.js';
+import { validateWebhookSignature, config, sendSMS } from '@lib/africastalking.js';
 
 export async function POST(request) {
   try {
@@ -41,7 +41,7 @@ export async function POST(request) {
     }
 
     // Format phone number
-    const formattedPhone = phoneNumber.replace(/\D/g, '');
+    let formattedPhone = phoneNumber.replace(/\D/g, '');
     if (formattedPhone.startsWith('0')) {
       formattedPhone = '254' + formattedPhone.substring(1);
     }

@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import connectDB from '../../../lib/mongodb';
-import User from '../../../models/User';
-import Message from '../../../models/Message';
-import { formatPhoneNumber } from '../../../lib/africastalking';
+import connectDB from '@lib/mongodb.js';
+import User from '@models/User.js';
+import Message from '@models/Message.js';
+import { formatPhoneNumber } from '@lib/africastalking.js';
 
 export async function POST(request) {
   try {

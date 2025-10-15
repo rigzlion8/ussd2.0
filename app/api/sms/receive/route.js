@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import connectDB from '../../../../lib/mongodb';
-import User from '../../../../models/User';
-import Message from '../../../../models/Message';
-import Quote from '../../../../models/Quote';
-import { sendSMS, formatPhoneNumber, config } from '../../../../lib/africastalking';
+import connectDB from '@lib/mongodb.js';
+import User from '@models/User.js';
+import Message from '@models/Message.js';
+import Quote from '@models/Quote.js';
+import { sendSMS, formatPhoneNumber, config } from '@lib/africastalking.js';
 
 export async function POST(request) {
   try {

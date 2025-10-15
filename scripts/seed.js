@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import User from '../models/User.js';
-import Quote from '../models/Quote.js';
-import Message from '../models/Message.js';
-import Subscription from '../models/Subscription.js';
+import User from '@models/User.js';
+import Quote from '@models/Quote.js';
+import Message from '@models/Message.js';
+import Subscription from '@models/Subscription.js';
 
 // Load environment variables
 dotenv.config();

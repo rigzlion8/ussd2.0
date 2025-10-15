@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import cronManager from '../../../lib/cron';
+import cronManager from '@lib/cron.js';
 
 export async function POST(request) {
   try {

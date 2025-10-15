@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import connectDB from '../../../lib/mongodb';
-import User from '../../../models/User';
-import Message from '../../../models/Message';
-import Subscription from '../../../models/Subscription';
+import connectDB from '@lib/mongodb.js';
+import User from '@models/User.js';
+import Message from '@models/Message.js';
+import Subscription from '@models/Subscription.js';
 
 export async function GET(request) {
   try {

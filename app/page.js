@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Dashboard from './components/Dashboard';
-import QuotesManager from './components/QuotesManager';
-import UsersManager from './components/UsersManager';
-import MessagesManager from './components/MessagesManager';
-import Analytics from './components/Analytics';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
+import Dashboard from './components/Dashboard.js';
+import QuotesManager from './components/QuotesManager.js';
+import UsersManager from './components/UsersManager.js';
+import MessagesManager from './components/MessagesManager.js';
+import Analytics from './components/Analytics.js';
+import Sidebar from './components/Sidebar.js';
+import Header from './components/Header.js';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
