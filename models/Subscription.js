@@ -4,13 +4,11 @@ const SubscriptionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
-    index: true
+    required: true
   },
   phoneNumber: {
     type: String,
     required: true,
-    index: true,
     validate: {
       validator: function(v) {
         return /^254[0-9]{9}$/.test(v);
@@ -21,8 +19,7 @@ const SubscriptionSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['love', 'bible'],
-    index: true
+    enum: ['love', 'bible']
   },
   billingCycle: {
     type: String,
@@ -42,8 +39,7 @@ const SubscriptionSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ['active', 'paused', 'cancelled', 'expired'],
-    default: 'active',
-    index: true
+    default: 'active'
   },
   startDate: {
     type: Date,
@@ -59,8 +55,7 @@ const SubscriptionSchema = new mongoose.Schema({
     required: true
   },
   africastalkingSubscriptionId: {
-    type: String,
-    index: true
+    type: String
   },
   paymentHistory: [{
     amount: {
@@ -117,7 +112,6 @@ const SubscriptionSchema = new mongoose.Schema({
 
 // Indexes for efficient queries
 SubscriptionSchema.index({ userId: 1, type: 1 });
-SubscriptionSchema.index({ phoneNumber: 1, status: 1 });
 SubscriptionSchema.index({ status: 1, nextBillingDate: 1 });
 SubscriptionSchema.index({ africastalkingSubscriptionId: 1 });
 SubscriptionSchema.index({ createdAt: -1 });

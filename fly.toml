@@ -1,8 +1,5 @@
 app = "ussd2-0"
-primary_region = "nbo" # Nairobi - you can change this to your preferred region
-
-[env]
-  PORT = "8080" # Next.js typically runs on port 3000, but Fly.io often uses 8080 by default
+primary_region = "jnb" # Johannesburg, South Africa
 
 [http_service]
   internal_port = 3000

@@ -4,7 +4,6 @@ const MessageSchema = new mongoose.Schema({
   recipient: {
     type: String,
     required: true,
-    index: true,
     validate: {
       validator: function(v) {
         return /^254[0-9]{9}$/.test(v);
@@ -20,25 +19,21 @@ const MessageSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['love', 'bible', 'welcome', 'cancellation', 'payment'],
-    index: true
+    enum: ['love', 'bible', 'welcome', 'cancellation', 'payment']
   },
   channel: {
     type: String,
     required: true,
-    enum: ['sms', 'ussd'],
-    index: true
+    enum: ['sms', 'ussd']
   },
   status: {
     type: String,
     required: true,
     enum: ['pending', 'sent', 'delivered', 'failed', 'expired'],
-    default: 'pending',
-    index: true
+    default: 'pending'
   },
   africastalkingId: {
-    type: String,
-    index: true
+    type: String
   },
   cost: {
     type: Number,

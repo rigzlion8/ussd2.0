@@ -5,7 +5,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    index: true,
     validate: {
       validator: function(v) {
         // Kenyan phone number validation (254XXXXXXXXX)
@@ -78,7 +77,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Index for efficient queries
-UserSchema.index({ phoneNumber: 1 });
 UserSchema.index({ 'subscriptionHistory.isActive': 1 });
 UserSchema.index({ createdAt: -1 });
 

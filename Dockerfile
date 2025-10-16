@@ -1,5 +1,8 @@
 FROM node:20-slim
 
+ARG MONGODB_URI
+ENV MONGODB_URI=$MONGODB_URI
+
 WORKDIR /app
 
 # Install pnpm

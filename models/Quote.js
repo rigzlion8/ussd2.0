@@ -4,8 +4,7 @@ const QuoteSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['love', 'bible'],
-    index: true
+    enum: ['love', 'bible']
   },
   title: {
     type: String,
@@ -24,13 +23,11 @@ const QuoteSchema = new mongoose.Schema({
   language: {
     type: String,
     enum: ['en', 'sw'],
-    default: 'en',
-    index: true
+    default: 'en'
   },
   isActive: {
     type: Boolean,
-    default: true,
-    index: true
+    default: true
   },
   priority: {
     type: Number,
@@ -62,8 +59,9 @@ const QuoteSchema = new mongoose.Schema({
 });
 
 // Indexes for efficient queries
-QuoteSchema.index({ type: 1, isActive: 1 });
-QuoteSchema.index({ type: 1, language: 1, isActive: 1 });
+QuoteSchema.index({ type: 1 });
+QuoteSchema.index({ language: 1 });
+QuoteSchema.index({ isActive: 1 });
 QuoteSchema.index({ priority: -1 });
 QuoteSchema.index({ usageCount: 1 });
 QuoteSchema.index({ createdAt: -1 });
