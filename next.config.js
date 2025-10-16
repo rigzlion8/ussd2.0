@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   transpilePackages: ['africastalking', 'mongoose'], // Add modules that need transpilation
   env: {
     AFRICASTALKING_API_KEY: process.env.AFRICASTALKING_API_KEY,
